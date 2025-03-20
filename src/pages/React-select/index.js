@@ -11,7 +11,13 @@ const options = [
 ];
 
 const ReactSelect = () => {
-  const { control, handleSubmit } = useForm();
+  const { control, handleSubmit } = useForm({
+    defaultValues: {
+      framework: ["react", "vue"],
+    },
+  });
+  //const { control, handleSubmit } = useForm();
+
   const {
     //field.onChange 是 React Hook Form 提供的方法，用于更新表单状态。
     //field.value 存储的是当前选中的值。
@@ -36,11 +42,13 @@ const ReactSelect = () => {
           <Select
             options={options}
             isMulti
+            value={options.filter((opt) => value.includes(opt.value))}
+            onChange={(opts) => onChange(opts.map((opt) => opt.value))}
             //在使用 react-select 组件时，value 属性需要一个包含 value 和 label 的对象
-            value={options.find((opt) => opt.value === value)}
+            //value={options.find((opt) => opt.value === value)}
             //外层 onChange 是 React-Select 的事件处理函数，参数 opt 是被选中的 option（包含 value 和 label）
             //内层 onChange 是 useController 返回的 React Hook Form 的 onChange 方法，用于更新表单值。
-            onChange={(opt) => onChange(opt.value)}
+            //onChange={(opt) => onChange(opt.value)}
           />
           <button type="submit">提交</button>
         </form>

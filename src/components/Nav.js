@@ -6,10 +6,10 @@ const Nav = () => {
     <nav className="w-2xs flex flex-col bg-gray-200 p-2 border-1">
       <strong>Project 11(react-hook-form & zod)</strong>
       <Link to="/form1" className="hover:text-green-600 cursor-wait">
-        Form1
+        Form1-Controlled Components
       </Link>
       <Link to="/form2" className="hover:text-green-600">
-        Form2
+        Form2-RHF & Zod
       </Link>
       <Link to="/rhf" className="hover:text-green-600">
         React Hook Form
@@ -20,9 +20,10 @@ const Nav = () => {
       <Link to="/react-select" className="hover:text-green-600">
         React Select
       </Link>
-      <Link to="/my-select" className="hover:text-green-600">
-        React Select - 2
+      <Link to="/react-select2" className="hover:text-green-600">
+        React Select2
       </Link>
+
       <Link to="/datalist-to-checkbox" className="hover:text-green-600">
         DataList to Checkbox
       </Link>

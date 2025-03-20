@@ -31,9 +31,18 @@ const ReactSelect = () => {
     control,
   });
 
+  const submitForm = (data) => {
+    console.log("提交的数据:", data);
+  };
+
   return (
-    <div>
+    <div className="m-4  border-1 rounded-xl flex-1 flex flex-col">
       <Nav />
+      <form
+        id="form"
+        className=" flex-1 flex flex-col my-6 border-1 mx-12 lg:mx-24 2xl:mx-48 gap-y-8 p-5 rounded-lg"
+        onSubmit={handleSubmit(submitForm)}
+      ></form>
     </div>
   );
 };
